@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div  style="background-color: #e9ecef" class="p-5 rounded-3 m-3 text-center">
+      <h1 style="color:#333333; font-size: 60px;">Mission to Mars</h1>      
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data!</a></p>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h3>Latest Mars News</h3>
+          <h4>{{data.news_title}}</h4>
+          <p>{{data.news_p}}</p>
+        </div>
+      </div>
+      
+        <div class="row">
+          <div class="col-8">
+            <h3>Featured Mars Image</h3>
+            <img class="img-fluid" src="{{data.featured_image_url}}" alt="Featured Image">
+          </div>
+          <div class="col-4">
+            <h4>Mars Facts</h4>
+            <table>{{ data.mars_facts|safe }}</table>            
+          </div>
+        </div>
+        <div class="container text-center">
+          <h1 style="color: white;">.</h1>          
+        </div>
+        <div class="container text-center">
+          <h3>Mars Hemispheres</h3>
+          <hr>
+        </div>
+        <div class="container text-center">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="{{data.hemisphere_url[0]['img_url']}}" class="card-img-top" alt="First hemisphere">
+                <div class="card-body">
+                  <h5 class="card-title">{{data.hemisphere_url[0]['title']}}</h5>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{{data.hemisphere_url[1]['img_url']}}" class="card-img-top" alt="First hemisphere">
+                <div class="card-body">
+                  <h5 class="card-title">{{data.hemisphere_url[1]['title']}}</h5>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{{data.hemisphere_url[2]['img_url']}}" class="card-img-top" alt="First hemisphere">
+                <div class="card-body">
+                  <h5 class="card-title">{{data.hemisphere_url[2]['title']}}</h5>                  
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{{data.hemisphere_url[3]['img_url']}}" class="card-img-top" alt="First hemisphere">
+                <div class="card-body">
+                  <h5 class="card-title">{{data.hemisphere_url[3]['title']}}</h5>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
